@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: 48px;
+  padding: 12px 8px;
+  border-radius: 12px;
+
+  background-color: #eeeeee;
+  cursor: pointer;
+
+  transition: background-color 0.25s;
+}
+
+.container:hover {
+  background-color: #e6e6e6;
+}
+
+.container:has(.input:focus) {
+  background-color: #e6e6e6;
+}
+
+.input {
+  all: inherit;
+
+  border: none;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+
+  padding-left: 4px;
+  margin-left: -4px;
+}
+
+.icon {
+  color: #c4c4c4;
+}
+
+.iconContainer {
+  all: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+
+  width: 24px;
+  height: 24px;
+
+  border: none;
+  padding: 0;
+}

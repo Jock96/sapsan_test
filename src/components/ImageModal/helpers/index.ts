@@ -1,0 +1,1 @@
+export { calculateImageDimension } from "./calculateImageDimension";

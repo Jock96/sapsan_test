@@ -1,0 +1,35 @@
+.searchWidget {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+
+  margin: auto;
+  height: 340px;
+  padding-bottom: 16px;
+  box-sizing: content-box;
+  background-color: inherit;
+}
+
+.activeSearchWidget {
+  height: 104px;
+  justify-content: flex-start;
+}
+
+.mobileActiveSearchWidget {
+  margin-top: -16px;
+  padding-top: 16px;
+  height: fit-content;
+}
+
+.searchInput {
+  width: 420px;
+}
+
+.mobileSearchInput {
+  width: 100%;
+}

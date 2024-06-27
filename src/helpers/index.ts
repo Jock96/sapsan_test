@@ -1,0 +1,1 @@
+export { getSlicedArray } from "./getSlicedArray";

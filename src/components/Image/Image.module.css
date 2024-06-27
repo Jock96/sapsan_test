@@ -1,0 +1,13 @@
+.image {
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.interactedImage {
+  pointer-events: none;
+}
+
+.coveredImage {
+  object-fit: cover;
+}

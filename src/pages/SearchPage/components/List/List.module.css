@@ -1,0 +1,13 @@
+.list {
+  margin-top: 16px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.emptyList {
+  padding-top: 16px;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
