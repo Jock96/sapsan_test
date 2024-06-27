@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { Modal } from "../Modal";
 import { Image as ImageComponent, ImageDimension } from "../Image";
 import { LAYOUT_OFFSET } from "./constants";
@@ -21,27 +21,29 @@ export const ImageModal: FC<ImageModalPorps> = ({
 
   const { mobile } = useMediaContext();
 
+  const calculateDimensions = useCallback(() => {
+    if (open) {
+      setModalSize(
+        calculateImageDimension({
+          src,
+          offsetHeight: mobile ? window.innerHeight / 2 : LAYOUT_OFFSET,
+          offsetWidth: mobile ? undefined : LAYOUT_OFFSET,
+        })
+      );
+    }
+  }, [mobile, open, src]);
+
+  const img = new Image();
+  img.src = src ?? "";
+  img.onload = calculateDimensions;
+
   useEffect(() => {
-    const calculateDimensions = () => {
-      if (open) {
-        setModalSize(
-          calculateImageDimension({
-            src,
-            offsetHeight: mobile ? window.innerHeight / 2 : LAYOUT_OFFSET,
-            offsetWidth: mobile ? undefined : LAYOUT_OFFSET,
-          })
-        );
-      }
-    };
-
-    calculateDimensions();
-
     window.addEventListener("resize", calculateDimensions);
 
     return () => {
       window.removeEventListener("resize", calculateDimensions);
     };
-  }, [open, src, mobile]);
+  }, [calculateDimensions]);
 
   const modalStyle = useMemo(
     () =>
@@ -53,8 +55,6 @@ export const ImageModal: FC<ImageModalPorps> = ({
           },
     [mobile]
   );
-
-  if (!width || !height) return null;
 
   return (
     <Modal open={open} onClose={onClose} style={modalStyle}>

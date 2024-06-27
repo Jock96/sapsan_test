@@ -9,4 +9,5 @@ export {
   EMPTY,
   type IFetcher,
 } from "./FetchMoreObserver";
+export { Fallback } from "./Fallback";
 export * from "./Icons";

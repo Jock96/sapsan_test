@@ -9,6 +9,7 @@ export interface ImageProps extends Partial<ImageDimension> {
   loading?: boolean;
   alt?: string;
   src?: string;
+  fullImageSrc?: string;
   className?: string;
   scaleOnClick?: boolean;
   style?: CSSProperties;

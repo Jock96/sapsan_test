@@ -66,7 +66,7 @@ export const SearchPage: FC = () => {
             setPhotos((prev) => (joinResult ? [...prev, ...list] : list));
             setPages(totalPages);
 
-            if (page < totalPages) {
+            if (page <= totalPages) {
               setNextPage(page + 1);
             }
 
@@ -85,10 +85,7 @@ export const SearchPage: FC = () => {
   };
 
   const canFetchMore =
-    !loading && !!photos.length && nextPage < pages && !!search;
-
-  console.log("nextPage", nextPage)
-  console.log("pages", pages)
+    !loading && !!photos.length && nextPage <= pages && !!search;
 
   const handleFetchMore = () => {
     if (!canFetchMore) return Promise.resolve();

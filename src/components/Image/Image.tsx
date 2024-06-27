@@ -10,6 +10,7 @@ const ImageComponent = forwardRef<HTMLImageElement, ImageProps>(
   (
     {
       src = "",
+      fullImageSrc = "",
       alt,
       className,
       scaleOnClick = true,
@@ -58,7 +59,7 @@ const ImageComponent = forwardRef<HTMLImageElement, ImageProps>(
           height={height ?? dimensions.height}
         />
         {scaleOnClick && (
-          <ImageModal open={open} onClose={toggleModal} src={src} alt={alt} />
+          <ImageModal open={open} onClose={toggleModal} src={fullImageSrc} alt={alt} />
         )}
       </>
     );

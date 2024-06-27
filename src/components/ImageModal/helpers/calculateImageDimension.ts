@@ -42,7 +42,7 @@ export const calculateImageDimension = ({
       ? {
           width: layoutWidth,
           height:
-            Math.ceil(proportions * layoutWidth) > layoutHeight
+            Math.floor(proportions * layoutWidth) > layoutHeight
               ? layoutHeight
               : Math.floor(proportions * layoutWidth),
         }

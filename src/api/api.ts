@@ -32,8 +32,12 @@ export class ApiInstance {
 
             return {
               list: results
-                .filter(({ urls }) => !!urls.full)
-                .map((result) => ({ ...result, url: result.urls.full })),
+                .filter(({ urls }) => !!urls.full || !!urls.thumb)
+                .map((result) => ({
+                  ...result,
+                  urlFull: result.urls.full,
+                  urlThumb: result.urls.thumb,
+                })),
               total,
               totalPages: total_pages,
             };

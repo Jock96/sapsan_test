@@ -9,6 +9,7 @@ export interface IPhotosEndpointGenerator extends Required<IGetPhotos> {
 
 interface IPhotoUrl {
   full: string;
+  thumb: string;
 }
 
 interface IPhotoData {
@@ -27,12 +28,13 @@ export interface IError {
 }
 
 export interface IPhoto {
-  id: IPhotoData["id"]
-  url: IPhotoUrl["full"]
+  id: IPhotoData["id"];
+  urlThumb: IPhotoUrl["thumb"];
+  urlFull: IPhotoUrl["full"];
 }
 
 export interface IPhotosInfo {
-    list: IPhoto[];
-    total: number;
-    totalPages: number;
+  list: IPhoto[];
+  total: number;
+  totalPages: number;
 }

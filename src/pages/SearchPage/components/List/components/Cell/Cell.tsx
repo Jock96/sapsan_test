@@ -33,7 +33,7 @@ export const Cell: FC<ICellProps> = ({
     position: (style.top ?? 0).toString(),
   });
 
-  const { id, url } = photo;
+  const { id, urlThumb, urlFull } = photo;
 
   const skeleton = id === EMPTY;
   const fetcher = canFetchMore && id === FETCHER_ID;
@@ -43,7 +43,7 @@ export const Cell: FC<ICellProps> = ({
       {fetcher ? (
         <FetchMoreObserver onFetchMore={onFetchMore} />
       ) : (
-        <Image src={url} loading={skeleton} />
+        <Image src={urlThumb} fullImageSrc={urlFull} loading={skeleton} />
       )}
     </div>
   );
