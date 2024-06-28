@@ -1,7 +1,5 @@
 # SAPSAN
 
-https://www.figma.com/design/dnUByqrxJTQESGdQrnafnB/Тестовое-задание-№-1?node-id=331-2378&t=vShL3GuAgrW9Il8D-0
-
 Задача тестового: 
 реализовать поиск по фотографиям на основе макета и api unsplash
 - ввод поискового запроса
